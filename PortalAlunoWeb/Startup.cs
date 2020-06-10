@@ -1,11 +1,18 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using NetCore.AutoRegisterDi;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using AutoMapper;
+using System.Reflection;
+using PortalUffRepository.Contexto;
+using PortalUffService.Base;
+using Newtonsoft.Json;
 
 namespace PortalAlunoWeb
 {
@@ -27,6 +34,18 @@ namespace PortalAlunoWeb
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddCors();
+            services.AddControllers();
+            services.AddDbContext<PortalContexto>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))); 
+            services.RegisterAssemblyPublicNonGenericClasses(
+                     Assembly.GetAssembly(typeof(IService<object>)))
+                    .AsPublicImplementedInterfaces();
+            services.RegisterAssemblyPublicNonGenericClasses(
+                    Assembly.GetAssembly(typeof(PortalContexto)))
+               .AsPublicImplementedInterfaces();
+            services.AddMvc();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +88,7 @@ namespace PortalAlunoWeb
                 if (env.IsDevelopment())
                 {
                     spa.UseAngularCliServer(npmScript: "start");
-                    //spa.Options.StartupTimeout = TimeSpan.FromSeconds(200);
+                    spa.Options.StartupTimeout = TimeSpan.FromSeconds(200);
                 }
             });
         }

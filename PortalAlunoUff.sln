@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalAlunoWeb", "PortalAlunoWeb\PortalAlunoWeb.csproj", "{334D6356-E0B2-49BB-99E1-719EFF5910CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalAlunoWeb", "PortalAlunoWeb\PortalAlunoWeb.csproj", "{334D6356-E0B2-49BB-99E1-719EFF5910CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Web", "1. Web", "{0706F254-BCFF-4DA0-A748-AD8D13B62591}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Repository", "3. Repository", "{6A796255-29D3-42C8-9044-6049FD95217F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalUffRepository", "PortalUffRepository\PortalUffRepository.csproj", "{FC7428DB-ED73-4A0E-B790-B2B979253DE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Service", "2. Service", "{BD61B87F-664F-42A7-9F26-4A953817EB76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalUffService", "PortalUffService\PortalUffService.csproj", "{202E3FD7-1F83-48BC-8763-15788C92E465}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,22 @@ Global
 		{334D6356-E0B2-49BB-99E1-719EFF5910CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{334D6356-E0B2-49BB-99E1-719EFF5910CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{334D6356-E0B2-49BB-99E1-719EFF5910CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7428DB-ED73-4A0E-B790-B2B979253DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7428DB-ED73-4A0E-B790-B2B979253DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7428DB-ED73-4A0E-B790-B2B979253DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7428DB-ED73-4A0E-B790-B2B979253DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202E3FD7-1F83-48BC-8763-15788C92E465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202E3FD7-1F83-48BC-8763-15788C92E465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202E3FD7-1F83-48BC-8763-15788C92E465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202E3FD7-1F83-48BC-8763-15788C92E465}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{334D6356-E0B2-49BB-99E1-719EFF5910CA} = {0706F254-BCFF-4DA0-A748-AD8D13B62591}
+		{FC7428DB-ED73-4A0E-B790-B2B979253DE1} = {6A796255-29D3-42C8-9044-6049FD95217F}
+		{202E3FD7-1F83-48BC-8763-15788C92E465} = {BD61B87F-664F-42A7-9F26-4A953817EB76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DB9AD8B-5EEA-4C45-8C22-FE3CEDD4BECC}
