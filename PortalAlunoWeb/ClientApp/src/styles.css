@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
+
+/* GLOBAL */
 a {
   color: #0366d6;
 }
@@ -17,3 +19,23 @@ code {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+  font-size: 14px;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* NAVBAR */
+a.text-nav-primary {
+  color: #ffff;
+}
+a.text-nav {
+  color: #ffff;
+}
+
+a.text-nav:hover {
+  color: #2f6faf !important;
+}
