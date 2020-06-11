@@ -3,20 +3,21 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace PortalUffRepository.Models.Map
 {
-    public class CoordenadorConfiguration : IEntityTypeConfiguration<Coordenador>
+    public class AssuntoConfiguration : IEntityTypeConfiguration<Assunto>
     {
-        public void Configure(EntityTypeBuilder<Coordenador> builder)
+        public void Configure(EntityTypeBuilder<Assunto> builder)
         {
-            builder.ToTable("Coodenador");
+            builder.ToTable("Assunto");
 
             builder.HasKey(x => x.Id);
-
-            builder.HasOne(f => f.Pessoa)
-                   .WithMany(f => f.Coordenadores);
 
             builder.Property(x => x.Id)
                    .HasColumnName("Id")
                    .HasColumnType("int");
+
+            builder.Property(x => x.Palavra)
+                   .HasColumnName("Palavra")
+                   .HasColumnType("varchar(100)");
 
             builder.Property(x => x.CriadoPor)
                    .HasColumnName("CriadoPor")

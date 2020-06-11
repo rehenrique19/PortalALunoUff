@@ -48,8 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
+    <Compile Include="Models\ProjetoAssunto.cs" />
+    <Compile Include="Models\Assunto.cs" />
     <Compile Include="Models\Equipe.cs" />
+    <Compile Include="Models\Map\ProjetoAssuntoConfiguration.cs" />
     <Compile Include="Models\Map\CoordenadorConfiguration.cs" />
+    <Compile Include="Models\Map\AssuntoConfiguration.cs" />
     <Compile Include="Models\Map\ProjetoConfiguration.cs" />
     <Compile Include="Models\Map\AlunoConfiguration.cs" />
     <Compile Include="Models\Map\StatusConfiguration.cs" />

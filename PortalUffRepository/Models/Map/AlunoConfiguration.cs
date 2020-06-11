@@ -11,6 +11,12 @@ namespace PortalUffRepository.Models.Map
 
             builder.HasKey(x => x.Id);
 
+            builder.HasOne(f => f.Pessoa)
+                   .WithMany(f => f.Alunos);
+
+            builder.HasOne(f => f.Equipe)
+                   .WithMany(f => f.Alunos);
+
             builder.Property(x => x.Id)
                    .HasColumnName("Id")
                    .HasColumnType("int");

@@ -3,16 +3,19 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace PortalUffRepository.Models.Map
 {
-    public class CoordenadorConfiguration : IEntityTypeConfiguration<Coordenador>
+    public class ProjetoAssuntoConfiguration : IEntityTypeConfiguration<ProjetoAssunto>
     {
-        public void Configure(EntityTypeBuilder<Coordenador> builder)
+        public void Configure(EntityTypeBuilder<ProjetoAssunto> builder)
         {
-            builder.ToTable("Coodenador");
+            builder.ToTable("ProjetoAssunto");
 
             builder.HasKey(x => x.Id);
 
-            builder.HasOne(f => f.Pessoa)
-                   .WithMany(f => f.Coordenadores);
+            builder.HasOne(f => f.Projeto)
+                   .WithMany(f => f.ProjetoAssuntos);
+
+            builder.HasOne(f => f.Assunto)
+                   .WithMany(f => f.ProjetoAssuntos);
 
             builder.Property(x => x.Id)
                    .HasColumnName("Id")
